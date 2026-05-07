@@ -1,0 +1,123 @@
+name: "Новый MCP-сервер"
+description: "Предложить MCP-сервер для добавления в каталог"
+title: "[New] "
+labels: ["new-server"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Название проекта
+      placeholder: "mcp-1c-awesome"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Ссылка
+      description: GitHub-репозиторий или сайт продукта
+      placeholder: "https://github.com/owner/repo"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Описание
+      description: Что делает сервер (1–2 предложения)
+      placeholder: "MCP-сервер для..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Язык реализации
+      options:
+        - Python
+        - TypeScript
+        - Go
+        - Kotlin
+        - Java
+        - Rust
+        - "1C Enterprise"
+        - C/C++
+        - PowerShell
+        - Другой
+    validations:
+      required: true
+
+  - type: dropdown
+    id: transport
+    attributes:
+      label: MCP-транспорт
+      options:
+        - stdio
+        - SSE
+        - Streamable HTTP
+        - WebSocket
+        - Другой
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Категория
+      options:
+        - IDE-интеграции
+        - Фреймворки для создания MCP-серверов
+        - Метаданные и анализ кода
+        - Справка и документация платформы
+        - Тестирование и проверка синтаксиса
+        - Интеграция с 1С:Напарник
+        - Интеграция с учётными системами
+        - Графовый анализ
+        - Инфраструктура и DevOps
+        - Наборы правил и скиллов
+        - Коммерческие продукты
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Статус проекта
+      options:
+        - "✅ Active"
+        - "🚧 Beta"
+        - "🔬 Experimental"
+        - "📦 Archived"
+    validations:
+      required: true
+
+  - type: input
+    id: requirements
+    attributes:
+      label: Требования
+      description: Минимальные зависимости для запуска
+      placeholder: "1С:Предприятие 8.3.24+, Docker"
+    validations:
+      required: true
+
+  - type: textarea
+    id: features
+    attributes:
+      label: Ключевые возможности
+      description: 3–7 основных фич (по одной на строку)
+      placeholder: |
+        - Фича 1
+        - Фича 2
+        - Фича 3
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: Тип
+      options:
+        - Open Source
+        - Коммерческий
+    validations:
+      required: true
